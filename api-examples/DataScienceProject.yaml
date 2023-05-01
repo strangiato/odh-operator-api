@@ -1,0 +1,8 @@
+apiVersion: opendatahub.io/v1beta1
+kind: DataScienceProject
+metadata:
+  name: mnist
+  namespace: mnist
+spec:
+  DataSciencePipeline:
+    enabled: true
