@@ -1,0 +1,29 @@
+apiVersion: opendatahub.io/v1beta1
+kind: DataScienceCluster
+metadata:
+  name: opendatahub
+  namespace: opendatahub-applications
+spec:
+  components:
+    odhDashboard:
+      enabled: true
+    notebookController:
+      enabled: true
+      notebookNamespace: opendhatahub-notebooks
+      managedNotebooks:
+        enabled: true
+    dataSciencePipelinesController:
+      enabled: true
+    modelMeshController:
+      enabled: true
+    codeflareController:
+      enabled: true
+    prometheus:
+      enabled: true
+    grafana:
+      enabled: true
+  sso:
+    openShiftOAuth: true
+  rbac:
+    admins: cluster-admins
+    users: authenticated-users
