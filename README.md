@@ -4,6 +4,20 @@ This repo is intended to provide possible design details for a future ODH Operat
 
 This operator should have a set of different custom resources that are originated from, owned, and managed by this operator.  There may also be additional custom resources that are originated from other operators that this operator deploys that should be exposed to the end user through this operator in the `Installed Operators` page, such as the `ModelMesh` custom resources.
 
+## Standards
+
+All custom resources should not deploy manifests from an arbitrary git repo and all manifests should be constructed from objects contained in the operator code.
+
+All custom resources owned and managed by the operator should report details of the state of the operator using the `status` section of the object.
+
+The `status` section should include a `conditions` list that contains details on the state of the object.  These conditions should be able to be mapped back to an ArgoCD health state of `Progressing`, `Degraded`, or `Healthy`.
+
+When reporting an issue in the custom resource, the `status` section should report useful information that helps to detail what the issue is causing the degraded state and which components the issue is related to.
+
+All objects deployed by an instance of the custom resource should be able to report and track the `Resources` that are managed and deployed by that custom resources.  These resources should be viable through the UI using the `Resources` tab of the `Installed Operators` custom resource page.
+
+Any resources installed by a custom resource should be able to be uninstalled by removing that custom resource.
+
 ## ODH Operator Owned Custom Resources
 
 ### DataScienceCluster
