@@ -1,0 +1,50 @@
+apiVersion: opendatahub.io/v1beta1
+kind: DataScienceCluster
+metadata:
+  name: opendatahub
+  namespace: opendatahub-applications
+spec:
+  components:
+    odhDashboard:
+      enabled: true
+      autoscale:
+        enabled: false
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1Gi
+        limits:
+          cpu: 1000m
+          memory: 2Gi
+    notebookController:
+      enabled: true
+      notebookNamespace: opendhatahub-notebooks
+      managedNotebooks:
+        enabled: true
+    dataSciencePipelinesController:
+      enabled: true
+    modelMeshController:
+      enabled: true
+    codeflareController:
+      enabled: true
+    prometheus:
+      enabled: true
+    grafana:
+      enabled: true
+  sso:
+    openShiftOAuth: true
+  rbac:
+    admins: cluster-admins
+    users: authenticated-users
+status:
+  conditions:
+    - lastTransitionTime: '2021-08-23T16:03:23Z'
+      message: All components successfully installed
+      reason: AllComponentsInstalled
+      status: 'True'
+      type: Available
+    - lastTransitionTime: '2021-08-23T16:03:23Z'
+      message: All components successfully installed
+      reason: Processing
+      status: 'False'
+      type: ComponentsInstalling
