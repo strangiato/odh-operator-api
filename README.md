@@ -2,7 +2,9 @@
 
 This repo is intended to provide possible design details for a future ODH Operator.
 
-## Custom Resources
+This operator should have a set of different custom resources that are originated from, owned, and managed by this operator.  There may also be additional custom resources that are originated from other operators that this operator deploys that should be exposed to the end user through this operator in the `Installed Operators` page, such as the `ModelMesh` custom resources.
+
+## ODH Operator Owned Custom Resources
 
 ### DataScienceCluster
 
@@ -10,7 +12,7 @@ The `DataScienceCluster` is designed to create an opinionated install of odh com
 
 This resource could be automatically configured on install similar to the default ArgoCD instance that is created by OpenShift-GitOps but should be managed by the user (or Argo) after the initial install.  The operator should reconcile changes to this object after it's initial creation, and report the status on the object.
 
-The primary user of this object is likely a cluster-administrator with minimal knowledge of data science processes, workflows, or tools.  The configuration should provide easy configuration with a reasonable initial configuration.
+The primary user of this object is likely a cluster-administrator with minimal knowledge of data science processes, workflows, or tools.  The configuration should provide easy configuration with a reasonable initial configuration.  This initial configuration should error on the side of providing "all" of the features, and allow users to selectively "turn off" the pieces that they don't need.
 
 #### Motivations
 
@@ -21,3 +23,16 @@ SSO configuration should be managed in a single location and the operator will i
 Future components should be able to be added to the object without breaking backwards compatibility but components should be first class citizens of the operator.  The operator should be aware of the types of objects each component should deploy as well as how different components deployments may change when multiple components are deployed.  For example, deploying both the notebookController and the odhDashboard may also deploy several OdhQuickStart objects to enable the notebookController components in the odhDashboard UI.  If the odhDashbaord is deployed without the notebookController, those objects would not be deployed.
 
 The operator should also be able to intelligently respond to details about the cluster.  For example, the operator should be able to detect when the NVIDIA GPU Operator is available and automatically make changes to the configuration to enable GPU capabilities.  For example, if the GPU Operator is installed, the operator should be able to make CUDA enabled images available automatically.
+
+## Third Party Custom Resources Exposed Through ODH Operator
+
+This are additional operators that the ODH Operator may deploy as components and the corresponding Custom Resources those objects manage.  Some of these objects may be exposed to the end user through the ODH Operator page in the Installed Operators UI in OpenShift.
+
+### Data Science Pipeline 
+
+- DataSciencePipelinesApplication
+
+### Model Mesh
+
+- Model Mesh Server
+- Model Mesh Models
