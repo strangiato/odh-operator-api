@@ -2,7 +2,7 @@
 
 This repo is intended to provide possible design details for a future ODH Operator.
 
-This operator should have a set of different custom resources that are originated from, owned, and managed by this operator.  There may also be additional custom resources that are originated from other operators that this operator deploys that should be exposed to the end user through this operator in the `Installed Operators` page, such as the `ModelMesh` custom resources.
+This operator should have a set of custom resources that are originated from, owned, and managed by this operator.  There may also be additional custom resources that are originated from other operators that this operator deploys that should be exposed to the end user through this operator in the `Installed Operators` page, such as the `ModelMesh` custom resources.
 
 ## Standards
 
