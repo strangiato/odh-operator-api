@@ -22,7 +22,7 @@ Any resources installed by a custom resource should be able to be uninstalled by
 
 ### DataScienceCluster
 
-The `DataScienceCluster` is designed to create an opinionated install of odh components.  
+The `DataScienceCluster` is designed to create an opinionated install of odh components and prepare the environment for use by multiple teams/projects.
 
 This resource could be automatically configured on install similar to the default ArgoCD instance that is created by OpenShift-GitOps but should be managed by the user (or Argo) after the initial install.  The operator should reconcile changes to this object after it's initial creation, and report the status on the object.
 
