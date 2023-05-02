@@ -8,6 +8,8 @@ This operator should have a set of custom resources that are originated from, ow
 
 All custom resources should not deploy manifests from an arbitrary git repo and all manifests should be constructed from objects contained in the operator code.
 
+All images deployed by any custom resource or custom resources that are owned by deployed components should be captured in the olm bundle manifest to enable mirroring for disconnected installs.
+
 All custom resources owned and managed by the operator should report details of the state of the operator using the `status` section of the object.
 
 The `status` section should include a `conditions` list that contains details on the state of the object.  These conditions should be able to be mapped back to an ArgoCD health state of `Progressing`, `Degraded`, or `Healthy`.
