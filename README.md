@@ -12,7 +12,7 @@ All images deployed by any custom resource or custom resources that are owned by
 
 All custom resources owned and managed by the operator should report details of the state of the operator using the `status` section of the object.
 
-The `status` section should include a `conditions` list that contains details on the state of the object.  These conditions should be able to be mapped back to an ArgoCD health state of `Progressing`, `Degraded`, or `Healthy`.
+The `status` section should include a `conditions` list that contains details on the state of the object.  These conditions should help to distinguish of the custom resource is currently being installed or progressing, installed and healthy, or degraded and the issues can't be resolved by the operator.
 
 When reporting an issue in the custom resource, the `status` section should report useful information that helps to detail what the issue is causing the degraded state and which components the issue is related to.
 
