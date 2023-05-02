@@ -40,7 +40,7 @@ The operator should also be able to intelligently respond to details about the c
 
 ## Third Party Custom Resources Exposed Through ODH Operator
 
-This are additional operators that the ODH Operator may deploy as components and the corresponding Custom Resources those objects manage.  Some of these objects may be exposed to the end user through the ODH Operator page in the Installed Operators UI in OpenShift.
+These are additional operators that the ODH Operator may deploy as components and the corresponding Custom Resources those objects manage.  Some of these objects may be exposed to the end user through the ODH Operator page in the Installed Operators UI in OpenShift.
 
 ### Data Science Pipeline 
 
@@ -48,5 +48,24 @@ This are additional operators that the ODH Operator may deploy as components and
 
 ### Model Mesh
 
-- Model Mesh Server
-- Model Mesh Models
+- clusterServingRuntimes
+- inferenceServer
+- predictors
+- servingRuntimes
+
+### Notebook Controller
+
+- notebooks
+
+### ODH Dashboard
+
+- odhApplications
+- odhDashboardConfigs
+- odhQuickStarts
+- odhDocuments
+
+### Ray
+
+- rayClusters
+- rayJobs
+- rayServices
