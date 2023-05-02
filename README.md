@@ -14,7 +14,7 @@ The `status` section should include a `conditions` list that contains details on
 
 When reporting an issue in the custom resource, the `status` section should report useful information that helps to detail what the issue is causing the degraded state and which components the issue is related to.
 
-All objects deployed by an instance of the custom resource should be able to report and track the `Resources` that are managed and deployed by that custom resources.  These resources should be viable through the UI using the `Resources` tab of the `Installed Operators` custom resource page.
+All objects deployed by an instance of the custom resource should be able to report and track the `Resources` that are managed and deployed by that custom resources.  These resources should be visable through the UI using the `Resources` tab of the `Installed Operators` custom resource page.
 
 Any resources installed by a custom resource should be able to be uninstalled by removing that custom resource.
 
