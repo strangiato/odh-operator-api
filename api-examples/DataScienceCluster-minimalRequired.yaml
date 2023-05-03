@@ -10,13 +10,11 @@ spec:
     notebookController:
       enabled: true
       notebookNamespace: opendhatahub-notebooks
-      managedNotebooks:
-        enabled: true
+      workbenchImages:
+        managed: true
     dataSciencePipelinesController:
       enabled: true
     modelMeshController:
-      enabled: true
-    codeflareController:
       enabled: true
     prometheus:
       enabled: true
