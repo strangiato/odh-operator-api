@@ -5,7 +5,7 @@ metadata:
   namespace: opendatahub-applications
 spec:
   components:
-    odhDashboard:
+    dashboard:
       enabled: true
     notebookController:
       enabled: true
