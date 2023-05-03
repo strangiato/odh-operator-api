@@ -7,8 +7,12 @@ spec:
   components:
     odhDashboard:
       enabled: true
+      rbac:
+        admins: cluster-admins
+        users: authenticated-users
       autoscale:
         enabled: false
+      replicas: 2
       resources:
         requests:
           cpu: 500m
@@ -33,9 +37,6 @@ spec:
       enabled: true
   sso:
     openShiftOAuth: true
-  rbac:
-    admins: cluster-admins
-    users: authenticated-users
 status:
   conditions:
     - lastTransitionTime: '2021-08-23T16:03:23Z'

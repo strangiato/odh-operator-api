@@ -24,6 +24,3 @@ spec:
       enabled: true
   sso:
     openShiftOAuth: true
-  rbac:
-    admins: cluster-admins
-    users: authenticated-users
