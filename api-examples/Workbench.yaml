@@ -1,0 +1,6 @@
+apiVersion: opendatahub.io/v1beta1
+kind: Workbench
+metadata:
+  name: mnist
+  namespace: mnist
+spec: {}
