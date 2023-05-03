@@ -5,7 +5,7 @@ metadata:
   namespace: opendatahub-applications
 spec:
   components:
-    odhDashboard:
+    dashboard:
       enabled: true
       rbac:
         admins: cluster-admins
@@ -22,13 +22,36 @@ spec:
           memory: 2Gi
     notebookController:
       enabled: true
-      notebookNamespace: opendhatahub-notebooks
+      notebookNamespace: opendhatahub-notebooks # unsure of how I feel about the idea of a namespace scoped object installing stuff in other namespaces.  Chris mentioned this namespace may be going away in the future though.
       managedNotebooks:
         enabled: true
+      resources:
+        limits:
+          cpu: 500m
+          memory: 4Gi
+        requests:
+          cpu: 500m
+          memory: 256Mi
     dataSciencePipelinesController:
       enabled: true
+      replicas: 1
+      resources:
+        limits:
+          cpu: 1
+          memory: 4Gi
+        requests:
+          cpu: 10m
+          memory: 64Mi
     modelMeshController:
       enabled: true
+      replicas: 3
+      resources:
+        requests:
+          cpu: 50m
+          memory: 96Mi
+        limits:
+          cpu: "1"
+          memory: 2Gi
     codeflareController:
       enabled: true
     prometheus:
