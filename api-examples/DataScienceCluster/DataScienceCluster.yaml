@@ -61,10 +61,35 @@ status:
     - lastTransitionTime: '2021-08-23T16:03:23Z'
       message: All components reporting as healthy
       reason: HealthChecksPassing
-      status: 'True'
+      status: true
       type: Available
     - lastTransitionTime: '2021-08-23T16:03:23Z'
-      message: All components successfully installed
-      reason: Processing
-      status: 'False'
-      type: ComponentsInstalling
+      message: Component successfully deployed
+      reason: ComponentReady
+      status: true
+      type: ComponentDasboardReady
+    - lastTransitionTime: '2021-08-23T16:03:23Z'
+      message: Component successfully deployed
+      reason: ComponentReady
+      status: true
+      type: ComponentNotebookControllerReady
+    - lastTransitionTime: '2021-08-23T16:03:23Z'
+      message: Component successfully deployed
+      reason: ComponentReady
+      status: true
+      type: ComponentDataSciencePipelinesControllerReady
+    - lastTransitionTime: '2021-08-23T16:03:23Z'
+      message: Component successfully deployed
+      reason: ComponentReady
+      status: true
+      type: ComponentModelMeshControllerReady
+    - lastTransitionTime: '2021-08-23T16:03:23Z'
+      message: Component successfully deployed
+      reason: ComponentReady
+      status: true
+      type: ComponentPrometheusReady
+    - lastTransitionTime: '2021-08-23T16:03:23Z'
+      message: Component successfully deployed
+      reason: ComponentReady
+      status: true
+      type: ComponentGrafanaReady
