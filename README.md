@@ -20,6 +20,8 @@ All objects deployed by an instance of the custom resource should be able to rep
 
 Any resources installed by a custom resource should be able to be uninstalled by removing that custom resource.
 
+Any CRDs owned by a dependent component that is directly modified by a user action (e.g. creating a `Model Server` in the Dashboard creates an object managed by ModelMesh) should be exposed and accessible through the Operator page for Installed Operators.
+
 ## ODH Operator Owned Custom Resources
 
 ### DataScienceCluster
